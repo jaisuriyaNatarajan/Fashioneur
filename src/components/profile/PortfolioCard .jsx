@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import Bojan1 from "../assets/profile/gallery/bojan1.png";
-import Bojan2 from "../assets/profile/gallery/bojan2.png";
-import Bojan3 from "../assets/profile/gallery/bojan3.png";
-import Bojan4 from "../assets/profile/gallery/bojan4.png";
+import Bojan1 from "../../assets/profile/gallery/bojan1.png";
+import Bojan2 from "../../assets/profile/gallery/bojan2.png";
+import Bojan3 from "../../assets/profile/gallery/bojan3.png";
+import Bojan4 from "../../assets/profile/gallery/bojan4.png";
 
 const PortfolioCard = () => {
   return (

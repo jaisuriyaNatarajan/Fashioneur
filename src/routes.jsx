@@ -1,22 +1,19 @@
-import React from 'react';
-import { createBrowserRouter } from 'react-router-dom';
-import App from './App';
-import Home from './components/Home';
-import About from './components/About';
-
+import React from "react";
+import { createBrowserRouter } from "react-router-dom";
+import App from "./App";
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <App />,
     children: [
-      {
-        path: 'home',
-        element: <Home />,
-      },
-      {
-        path: 'about',
-        element: <About />,
-      },
+      // {
+      //   path: 'home',
+      //   element: <Home />,
+      // },
+      // {
+      //   path: 'about',
+      //   element: <About />,
+      // },
     ],
   },
 ]);

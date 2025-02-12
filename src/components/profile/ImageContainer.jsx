@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import * as images from "../assets/profile";
-import AspectRatioBlock from "../assets/profile/thumbnails/& Gallery/AspectRatioBlock.png";
+import * as images from "../../assets/profile";
+import AspectRatioBlock from "../../assets/profile/thumbnails/& Gallery/AspectRatioBlock.png";
 
 const ImageGallery = styled.div`
   display: flex;

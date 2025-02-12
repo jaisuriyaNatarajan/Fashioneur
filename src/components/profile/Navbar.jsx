@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { FiChevronDown } from "react-icons/fi";
 import { Avatar } from "@mui/material";
 
-
 const NavbarContainer = styled.nav`
   background: linear-gradient(90deg, #000000, #1a1a1a);
   padding: 1rem 2rem;
@@ -12,6 +11,8 @@ const NavbarContainer = styled.nav`
   justify-content: space-between;
   color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 100; /* Ensures Navbar is above other elements */
 `;
 
 const Logo = styled.h1`
@@ -63,9 +64,14 @@ const DropdownMenu = styled.ul`
   margin: 0;
   padding: 0.5rem 0;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensures dropdown appears above all elements */
+  border-radius: 5px;
+  min-width: 150px;
 
   li {
     padding: 0.5rem 1rem;
+    color: white;
+    cursor: pointer;
 
     &:hover {
       background-color: #444;
@@ -122,4 +128,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
