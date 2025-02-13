@@ -252,7 +252,7 @@ const TravelWrapper = styled.div`
 
 const OverAllWrapper = styled.div`
   ${FlexCenter}
-  margin: 23px 66px;
+  margin: 23px 66px 0px 66px;
   height: auto;
 `;
 

@@ -11,6 +11,7 @@ const LargeImageContainer = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 300px;
+  border-radius: 24px 0px 0px 24px;
 `;
 
 const ThumbnailContainer = styled.div`
