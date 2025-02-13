@@ -5,6 +5,7 @@ import Bojan2 from "../../assets/profile/gallery/bojan2.png";
 import Bojan3 from "../../assets/profile/gallery/bojan3.png";
 import Bojan4 from "../../assets/profile/gallery/bojan4.png";
 
+
 const PortfolioCard = () => {
   return (
     <Container>
@@ -43,7 +44,6 @@ const Container = styled.div`
   flex-direction: column;
   gap: 12px;
   width: 406px;
-  height: 519px;
 `;
 
 const CardContainer = styled.div`
@@ -51,8 +51,6 @@ const CardContainer = styled.div`
   border-radius: 9.84px;
   display: flex;
   flex-direction: column;
-  width: 382px;
-  height: 377px;
   gap: 19.68px;
   padding: 12px;
   backdrop-filter: blur(10px);
@@ -80,6 +78,7 @@ const Heading = styled.h5`
   font-weight: 500;
   font-size: 18px;
   letter-spacing: 1.2%;
+  white-space: nowrap;
 `;
 
 const Description = styled.p`

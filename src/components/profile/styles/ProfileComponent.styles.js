@@ -1,11 +1,30 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import backgroundImage from "../../../assets/profile/profileBackground.png";
 
-const ProfileWrapper = styled.div`
-  gap: 24px;
-  padding: 24px;
+/* 🌟 Common Styles */
+const FlexColumn = css`
   display: flex;
   flex-direction: column;
+`;
+
+const FlexCenter = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const FontStyle = css`
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18.75px;
+  letter-spacing: 1%;
+  color: #b3b3b3;
+`;
+
+const ProfileWrapper = styled.div`
+  ${FlexColumn}
+  gap: 24px;
+  padding: 24px;
   align-items: flex-start;
   justify-content: space-between;
   background-color: #292929f2;
@@ -14,6 +33,7 @@ const ProfileWrapper = styled.div`
   z-index: 1;
   overflow: hidden;
   min-height: 100vh;
+  margin-bottom: 95px;
 
   &::before {
     content: "";
@@ -31,26 +51,25 @@ const ProfileWrapper = styled.div`
 `;
 
 const ProfileInfoWrapper = styled.div`
-  display: flex;
-  align-items: center;
+  ${FlexCenter}
+  justify-content:flex-start;
   gap: 16px;
+
   .Image img {
     width: 64px;
     height: 64px;
-    border-radius: 200px;
+    border-radius: 50%;
   }
 
   .profile-info {
-    display: flex;
-    flex-direction: column;
+    ${FlexColumn}
     margin-top: 10px;
     gap: 4px;
   }
 `;
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+  ${FlexColumn}
   width: 1261px;
   gap: 10px;
   padding: 16px;
@@ -58,105 +77,75 @@ const Wrapper = styled.div`
   h4 {
     font-weight: 500;
     font-size: 22px;
-    line-height: 25.78px;
     letter-spacing: 1.5%;
   }
 
   h5 {
     font-weight: 500;
     font-size: 18px;
-    line-height: 21.09px;
     letter-spacing: 1.2%;
   }
 `;
+
 const DetailsWrapper = styled.div`
-  width: 1261px;
-  height: 2354px;
-  gap: 24px;
   display: flex;
   justify-content: space-between;
+  width: 1261px;
+  height: auto;
+  gap: 24px;
 `;
 
 const LeftContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  ${FlexColumn}
   width: 703px;
-  height: 2354px;
   gap: 24px;
-  padding-right: 12px;
-  padding-left: 12px;
+  padding: 0 12px;
 `;
+
 const RightContainer = styled.div`
   width: 534px;
   height: 679px;
   border-radius: 12px;
   gap: 24px;
-  border-width: 1px;
+  border: 1px solid #444444;
 `;
+
 const RatingContainer = styled.div`
-  display: flex;
+  ${FlexCenter}
   height: 97px;
   padding: 16px;
   border-radius: 12px;
-  border-width: 1px;
-  justify-content: space-between;
   border: 1px solid #444444;
+  justify-content: space-between;
 `;
+
 const Information = styled.div`
   width: 243px;
   height: 63px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${FlexCenter}
   font-weight: 500;
   font-size: 18px;
-  line-height: 21.09px;
-  letter-spacing: 1.2%;
-
-  h5 {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 21.09px;
-    letter-spacing: 1.2%;
-  }
 `;
+
 const Ratings = styled.div`
+  ${FlexColumn}
   width: 144px;
   height: 52px;
   gap: 12px;
-  display: flex;
-  flex-direction: column;
   align-items: center;
+
   .stars {
     color: gold;
     display: flex;
   }
 `;
-const VerticalDivider = styled.div`
-  border: 0;
-  height: 52px;
-  background-color: #444444;
-  width: 1px;
-  margin: 0 52px;
-`;
 
 const TotalReviews = styled.div`
+  ${FlexColumn}
   width: 52px;
   height: 52px;
   gap: 12px;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-`;
-
-const AboutMe = styled.div`
-  display: flex;
-  color: #b3b3b3;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 18.75px;
-  letter-spacing: 1%;
 `;
 
 const Divider = styled.div`
@@ -168,9 +157,21 @@ const Divider = styled.div`
   margin-top: ${(props) => props.size || "24px"};
 `;
 
-const ServiceContainer = styled.div`
+const VerticalDivider = styled.div`
+  border: 0;
+  height: 52px;
+  background-color: #444444;
+  width: 1px;
+  margin: 0 52px;
+`;
+
+const AboutMe = styled.div`
+  ${FontStyle}
   display: flex;
-  flex-direction: column;
+`;
+
+const ServiceContainer = styled.div`
+  ${FlexColumn}
   width: 727px;
   height: auto;
   gap: 12px;
@@ -180,104 +181,79 @@ const ServiceTitle = styled.div`
   font-size: 18px;
   font-weight: 500;
 `;
+
 const ServiceList = styled.div`
-  display: flex;
-  flex-direction: column;
+  ${FlexColumn}
   gap: 12px;
 `;
+
 const ServiceItem = styled.ul``;
+
 const List = styled.li`
-  font-size: 16px;
-  font-weight: 400;
-  color: #b3b3b3;
+  ${FontStyle}
   position: relative;
   left: 28px;
 `;
+
 const MyDetails = styled.div`
-  display: flex;
-  flex-direction: column;
+  ${FlexColumn}
   gap: 12px;
   font-size: 18px;
   font-weight: 500;
+
   .details {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 18.75px;
-    letter-spacing: 1%;
-    color: #b3b3b3;
+    ${FontStyle}
   }
 `;
 
 const ExperienceWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+  ${FlexColumn}
   gap: 12px;
+
   h5 {
     font-weight: 500;
     font-size: 18px;
-    line-height: 21.09px;
     letter-spacing: 1.2%;
   }
+
   h4 {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 18.75px;
-    letter-spacing: 1%;
+    ${FontStyle}
   }
 
   .experience {
-    display: flex;
+    ${FlexColumn}
     gap: 12px;
-    flex-direction: column;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 18.75px;
-    letter-spacing: 1%;
-    color: #b3b3b3;
   }
 `;
 
 const TravelWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+  ${FlexColumn}
   gap: 12px;
   height: 200px;
   border-radius: 12px;
-  border-width: 1px;
-  justify-content: flex-start;
 
   .Travel-Details {
     font-weight: 500;
     font-size: 18px;
-    line-height: 25px;
     letter-spacing: 1.2%;
   }
 
   .travel {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 25px;
-    letter-spacing: 1%;
-    color: #b3b3b3;
-    display: flex;
-    flex-direction: column;
+    ${FontStyle}
+    ${FlexColumn}
     gap: 12px;
   }
 
   .travel .travel-header {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 18.75px;
-    letter-spacing: 1%;
     color: white;
     margin-bottom: 8px;
   }
 `;
+
 const OverAllWrapper = styled.div`
-  display: flex;
-  justify-content: "center";
-  align-items: "center";
+  ${FlexCenter}
   margin: 23px 66px;
+  height: auto;
 `;
 
 export {
@@ -303,5 +279,4 @@ export {
   TotalReviews,
   AboutMe,
   Divider,
-  ServiceContainer,
 };
