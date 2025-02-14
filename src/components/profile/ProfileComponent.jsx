@@ -1,5 +1,4 @@
 import React from "react";
-import StarIcon from "@mui/icons-material/Star";
 import ImageContainer from "./ImageContainer";
 import avatar from "../../assets/profile/Avatar.png";
 import PackageCard from "./PackageCard ";
@@ -43,7 +42,7 @@ const ProfileComponent = () => {
     "Airbrush makeup (optional)",
   ];
   return (
-    <>
+    <div id="glass-overlay">
       <Navbar />
       <OverAllWrapper>
         <ProfileWrapper>
@@ -179,7 +178,7 @@ const ProfileComponent = () => {
           </DetailsWrapper>
         </ProfileWrapper>
       </OverAllWrapper>
-    </>
+    </div>
   );
 };
 

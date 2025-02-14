@@ -5,14 +5,14 @@ import { Avatar } from "@mui/material";
 
 const NavbarContainer = styled.nav`
   background: linear-gradient(90deg, #000000, #1a1a1a);
-  padding: 1rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   position: relative;
-  z-index: 100; /* Ensures Navbar is above other elements */
+  z-index: 100;
+  height: 80px;
 `;
 
 const Logo = styled.h1`

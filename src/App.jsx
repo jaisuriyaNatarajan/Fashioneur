@@ -7,9 +7,7 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <div id="glass-overlay">
-        <ProfileComponent />
-      </div>
+      <ProfileComponent />
       <Outlet />
     </div>
   );
