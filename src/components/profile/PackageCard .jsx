@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const CardWrapper = styled.div`
@@ -166,6 +166,12 @@ const PackageInfoContainer = styled.div`
 `;
 
 const PackageCard = () => {
+  const [activeIndex, setActiveIndex] = useState(1);
+  const PackageButton = ["Basic", "Standard", "Premium"];
+
+  const handleClick = (index) => {
+    setActiveIndex(index);
+  };
   const packageFeatures = [
     "Extensive skin prep with hydration treatment",
     "HD/Airbrush foundation for long-lasting coverage",
@@ -175,13 +181,21 @@ const PackageCard = () => {
     "Waterproof & transfer-proof makeup",
     "Hairstyling (Updo, curls, or any preferred bridal style)",
   ];
+
+  console.log(activeIndex, "foxx");
   return (
     <CardWrapper>
       <TabContainer>
         <div className="tab-details">
-          <Tab active={false}>Basic</Tab>
-          <Tab active={true}>Standard</Tab>
-          <Tab active={false}>Premium</Tab>
+          {PackageButton.map((item, index) => (
+            <Tab
+              key={`${index}-${item}`}
+              onClick={() => handleClick(index)}
+              active={activeIndex === index}
+            >
+              {item}
+            </Tab>
+          ))}
         </div>
       </TabContainer>
 

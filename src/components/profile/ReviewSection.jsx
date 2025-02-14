@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import StarIcon from "@mui/icons-material/Star";
 import avatar from "../../assets/profile/Avatar.png";
+import StarRatings from "./StarRatings";
 
 const ReviewSection = () => {
   const reviews = [
@@ -48,10 +48,7 @@ const ReviewSection = () => {
                 <div className="reviewerDetails">
                   <div className="reviwer-name">{review.name}</div>
                   <Ratings>
-                    <div className="stars">
-                      <StarIcon /> <StarIcon /> <StarIcon /> <StarIcon />
-                      <StarIcon />
-                    </div>
+                    <StarRatings />
                   </Ratings>
                 </div>
                 <div className="comments">“{review.comment}”</div>

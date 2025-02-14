@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import backgroundImage from "../../../assets/profile/profileBackground.png";
+import StarIcon from "@mui/icons-material/Star";
 
 /* 🌟 Common Styles */
 const FlexColumn = css`
@@ -133,11 +134,13 @@ const Ratings = styled.div`
   height: 52px;
   gap: 12px;
   align-items: center;
+`;
 
-  .stars {
-    color: gold;
-    display: flex;
-  }
+const Star = styled(StarIcon)`
+  font-size: 40px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  color: ${(props) => (props.$active ? "gold" : "gray")};
 `;
 
 const TotalReviews = styled.div`
@@ -279,4 +282,5 @@ export {
   TotalReviews,
   AboutMe,
   Divider,
+  Star,
 };

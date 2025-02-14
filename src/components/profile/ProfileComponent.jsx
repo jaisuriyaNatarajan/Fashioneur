@@ -31,6 +31,7 @@ import {
 } from "./styles/ProfileComponent.styles";
 import ReviewSection from "./ReviewSection";
 import BookingsSection from "./BookingsSection";
+import StarRating from "./StarRatings";
 
 const ProfileComponent = () => {
   const services = [
@@ -69,10 +70,7 @@ const ProfileComponent = () => {
                 <VerticalDivider />
                 <Ratings>
                   <div>4.5</div>
-                  <div className="stars">
-                    <StarIcon /> <StarIcon /> <StarIcon /> <StarIcon />{" "}
-                    <StarIcon />
-                  </div>
+                  <StarRating />
                 </Ratings>
                 <VerticalDivider />
                 <TotalReviews>
