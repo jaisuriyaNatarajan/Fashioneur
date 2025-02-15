@@ -4,24 +4,24 @@ import { Verified } from "@mui/icons-material";
 import ErrorOutlineOutlinedIcon from "@mui/icons-material/ErrorOutlineOutlined";
 
 const BackGroundImage = styled.div`
-  background-image: url(${(props) => props.backgroundImage});
-  background-size: cover;
-  background-position: center;
+  position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  position: relative;
 
   &::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2);
+    height: 100vh;
+    background-image: url(${(props) => props.backgroundImage});
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
   }
 `;
 
@@ -33,7 +33,7 @@ const GlassContainer = styled.div`
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 `;
 
@@ -204,6 +204,15 @@ const Column = styled.div`
     font-size: 16px;
     line-height: 19px;
     color: #b3b3b3;
+  }
+
+  h3 {
+    color: #ffff;
+    margin: 8px 14px;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
   }
 `;
 

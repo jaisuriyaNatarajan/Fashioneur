@@ -45,9 +45,29 @@ const NavItem = styled.button`
   `}
 `;
 
-const AboutNavItems = () => {
+const AboutNavItems = ({ aboutRef, experienceRef }) => {
   const menuItems = ["About", "Portfolio", "Service", "Review"];
+
   const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const handleScroll = (index, section) => {
+    setSelectedIndex(index);
+
+    const sectionRefs = {
+      About: aboutRef,
+      Review: experienceRef,
+    };
+
+    const sectionRef = sectionRefs[section];
+
+
+    if (sectionRef?.current) {
+      sectionRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
 
   return (
     <Nav>
@@ -55,7 +75,7 @@ const AboutNavItems = () => {
         <NavItem
           key={item}
           active={selectedIndex === index}
-          onClick={() => setSelectedIndex(index)}
+          onClick={() => handleScroll(index, item)}
         >
           {item}
         </NavItem>
