@@ -45,7 +45,7 @@ const ProfileWrapper = styled.div`
     height: 100%;
     background: url(${backgroundImage}) no-repeat center center;
     background-size: cover;
-    opacity: 0.2;
+    opacity: 0.5;
     z-index: -1;
     pointer-events: none;
   }
@@ -156,7 +156,7 @@ const Divider = styled.div`
   height: 1px;
   background-color: #444444;
   width: 100%;
-  max-width: 679px;
+  max-width: ${(props) => (props.fullwidth ? "100%" : "679px")};
   margin-top: ${(props) => props.size || "24px"};
 `;
 

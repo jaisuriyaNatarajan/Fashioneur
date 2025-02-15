@@ -31,6 +31,13 @@ import {
 import ReviewSection from "./ReviewSection";
 import BookingsSection from "./BookingsSection";
 import StarRating from "./StarRatings";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+const HyperLink = styled(Link)`
+  text-decoration: none;
+  color: #ffff;
+`;
 
 const ProfileComponent = () => {
   const services = [
@@ -90,7 +97,7 @@ const ProfileComponent = () => {
                   <img src={avatar} alt="Profile" />
                 </div>
                 <div className="profile-info">
-                  <div>Angelina </div>
+                  <HyperLink to="/aboutme">Angelina </HyperLink>
                   <div>Level 03. Experienced Artist </div>
                 </div>
               </ProfileInfoWrapper>

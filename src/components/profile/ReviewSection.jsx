@@ -3,7 +3,7 @@ import styled from "styled-components";
 import avatar from "../../assets/profile/Avatar.png";
 import StarRatings from "./StarRatings";
 
-const ReviewSection = () => {
+const ReviewSection = ({ size, margin }) => {
   const reviews = [
     {
       id: 1,
@@ -38,7 +38,9 @@ const ReviewSection = () => {
     <>
       <div>
         <ReviewContainer>
-          <ReviweTitle>Reviews (5.0/5 stars)</ReviweTitle>
+          <ReviweTitle size={size} margin={margin}>
+            Reviews (5.0/5 stars)
+          </ReviweTitle>
           {reviews.map((review) => (
             <ReviewerDetails key={review.id}>
               <div className="Image">
@@ -66,7 +68,9 @@ const ReviweTitle = styled.h5`
   font-weight: 500;
   font-size: 18px;
   line-height: 21.09px;
-  letter-spacing: 1.2%;
+  color: white;
+  font-size: ${(props) => (props.size ? props.size : "18px")};
+  margin: ${(props) => props.margin};
 `;
 const ReviewContainer = styled.div`
   display: flex;
@@ -92,13 +96,17 @@ const ReviewerDetails = styled.div`
     font-weight: 400;
     font-size: 16px;
     line-height: 18.75px;
-    letter-spacing: 1%;
     color: #b3b3b3;
     margin-top: 8px;
   }
 
   .Details {
     width: 100%;
+  }
+
+  .reviwer-name {
+    font-size: ${(props) => (props.size ? props.size : "18px")};
+    color: ${(props) => (props.color ? props.color : "#fff")};
   }
 `;
 
