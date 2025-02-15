@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   BackGroundImage,
   GlassContainer,
@@ -28,8 +28,13 @@ import StarRatings from "../profile/StarRatings";
 import AboutNavItems from "./AboutNavItems";
 import { Divider } from "../profile/styles/ProfileComponent.styles";
 import ReviewSection from "../profile/ReviewSection";
+import CollectionGrid from "./ImageContainer";
+import { collections } from "./sample";
 
 const AboutMe = () => {
+  const aboutRef = useRef(null);
+  const experienceRef = useRef(null);
+
   const stats = [
     { value: 2390, label: "Followers" },
     { value: 163, label: "Following" },
@@ -102,8 +107,11 @@ const AboutMe = () => {
               </ReporWrapper>
             </LeftContainer>
             <RightContainer>
-              <AboutNavItems />
-              <AboutMeContainer>
+              <AboutNavItems
+                aboutRef={aboutRef}
+                experienceRef={experienceRef}
+              />
+              <AboutMeContainer ref={aboutRef}>
                 <Column>
                   <div className="header">About Me</div>
                   <div className="content">
@@ -129,8 +137,13 @@ const AboutMe = () => {
                 </div>
               </Column>
               <Divider fullwidth />
-              {/* TODO - Portfolio Section */}
-              <Column>
+              <Column weight>
+                <div className="header">Portfolio</div>
+                <CollectionGrid collections={collections} />
+                <h3>Show more</h3>
+              </Column>
+              <Divider fullwidth />
+              <Column ref={experienceRef}>
                 <div className="header">Experience</div>
                 <div className="content">
                   <Column>
